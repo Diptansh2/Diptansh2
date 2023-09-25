@@ -1,0 +1,24 @@
+{%extends 'entry/base1.html'%}
+{% block title %}OJD{% endblock %}
+
+
+{%block child_block%}
+<div class="container-fluid">
+    <h1>Hello!! Here You can publish your post</h1>
+    <div class="container">
+      {% csrf_token %}
+      <div class="button-container-article">
+        <a href="/top5post"><button onclick="filterNews('latest')">Top 5 Articles</button></a>
+        <a href="/sportpost"><button onclick="filterNews('updated')">Sport Articles</button></a>
+        <a href="/internationalpost"><button onclick="filterNews('new')">International Articles</button></a>
+        <a href="/techpost"><button onclick="filterNews('Tech')">Technical Articles</button></a>
+        <a href="/rightadd"><button onclick="filterNews('Tech')">Right Advertisement</button></a>
+        <a href="/leftadd"><button onclick="filterNews('Tech')">Left Advertisenent</button></a>
+        <a href="/astrologypost"><button onclick="filterNews('astrology')">Astrology</button></a>
+          
+        </div>
+      </div>
+</div>
+      
+    
+{%endblock%}

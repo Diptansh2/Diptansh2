@@ -1,0 +1,35 @@
+{% extends 'entry/base1.html' %}
+{% block child_block %}
+<div class="container">
+  {% csrf_token %}
+  <div class="button-container-article">
+    <a href="/top5post"><button onclick="filterNews('astrology')">Top 5 Articles</button></a>
+    <a href="/sportpost"><button onclick="filterNews('updated')">Sport Articles</button></a>
+    <a href="/internationalpost"><button onclick="filterNews('new')">International Articles</button></a>
+    <a href="/techpost"><button onclick="filterNews('Tech')">Technical Articles</button></a>
+    <a href="/rightadd"><button onclick="filterNews('Tech')">Right Advertisement</button></a>
+    <a href="/leftadd"><button onclick="filterNews('Tech')">Left Advertisenent</button></a>
+    <a href="/lifestylepost"><button onclick="filterNews('new')">Lifestyle Articles</button></a>
+      
+    </div>
+<h1>Astrology Posts</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Heading</h5>
+      <textarea name="uastrology" class="custom-textarea"></textarea>
+      <h5 class="card-title">Content</h5>
+      <textarea name="uaastrology" class="customs-textarea"></textarea>
+      <h5 class="card-title">Image</h5>
+      <input type="file" name="upload" accept="image/*">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+</form>
+</div>
+<hr>
+
+
+
+{% endblock %}

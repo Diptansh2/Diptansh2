@@ -1,0 +1,39 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Latest{% endblock %}
+
+{% block child_block %}
+
+
+
+{% csrf_token %}
+  <div class="button-container-article">
+    <a href="/top5"><button onclick="filterNews('latest')">Top 5 Articles</button></a>
+    <a href="/sport"><button onclick="filterNews('updated')">Sport Articles</button></a>
+    <a href="/international"><button onclick="filterNews('new')">International Articles</button></a>
+    <a href="/tech"><button onclick="filterNews('Tech')">Technical Articles</button></a>
+    <a href="/astrology"><button onclick="filterNews('astrology')">Astrology</button></a>
+    <!-- <a href="/left"><button onclick="filterNews('Tech')">Left Advertisement</button></a> -->
+    <a href="/right"><button onclick="filterNews('Tech')">Right Advertisement</button></a>
+    <a href="/lifestyle"><button onclick="filterNews('lifestyle')">lifestyle Articles</button></a>
+  </div>
+<div class="container-fluid">
+  <div class="latest"><h1>Left Advertisement</h1>
+  {% for data in left_data %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ data.uleftpost }}</h5>
+      <img src="{{ data.img_url }}" height="200px" width="400px" alt="Image">
+      <p class="card-text">{{ data.ualeftpost }}</p>
+      
+      <p class="card-text">Posted at: {{ data.created_at }}</p>
+            
+      <a href="{% url 'leftpost' %}?data={{ data.uleftpost }}"></a>
+      <a href="{% url 'leftpost' %}?data={{ data.ualeftpost }}"></a>
+    </div>
+  </div>
+  </div>
+  {% endfor %}
+  
+  
+</div>
+{% endblock %}

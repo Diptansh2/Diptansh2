@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  
+      <link rel="stylesheet" type="text/css" href="{% static 'css/buttons.css' %}">
+      <script src="{% static 'javascript/header.js' %}"></script>
+      
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <title>{% block title %}{% endblock %} - My Webpage</title>
+  {% endblock %}
+
+  <div
+  class="bg-image"
+  style="
+    background-image: url('https://th.bing.com/th/id/OIP.9KloN_Qsm9JvoQ2VtIcFagHaKT?pid=ImgDet&w=207&h=288&c=7');
+    height: 60vh;
+    
+  "  >
+
+  
+  
+</head>
+<body>
+  
+
+ 
+
+  <div class="base">
+
+  <nav>
+    
+    <div class="navbar">
+      
+      <div class="container nav-container">
+        
+          <img class="fit_picture" src="https://content.jdmagicbox.com/comp/ahmedabad/h9/079pxx79.xx79.180719112134.t4h9/catalogue/aanand-pav-bhaji-nirnay-nagar-ahmedabad-fast-food-zrr1v04v4k-250.jpg"  width="100" height="60" alt="Logo"><h1>Anand Nirnaya</h1>
+    
+          <input class="checkbox" type="checkbox" name="" id="" />
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>  
+
+          
+        
+       {%csrf_token%}
+       <div class="search-container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="ml-auto">
+          
+              <div><input type="text" id="searchInput" placeholder="Search..."><button>Search</button></div>
+              <div id="searchResults"></div>
+          </div>
+      </div>
+        
+        <div class="menu-items">
+          <li><a href="/navbar"><b>HOME</b></a></li>
+          <li><a href="/astrology"><b>ASTROLOGY</b></a></li>
+          <li><a href="/lifestyle"><b>LIFESTYLE</b></a></li>
+          <li><a href="#"><b>TRENDING</b></a></li>
+          <li><a href="#"><b>VIDEOS</b></a></li>
+          <li><a href="#"><b>PHOTOS</b></a></li>
+          <li><a href="/sport"><b>SPORTS</b></a></li>
+          <li><a href="#"><b>DAILY ANALYSIS</b></a></li>
+          <li><a href="#"><b>OPINION</b></a></li>
+          <li><a href="#"><b>FOR YOU</b></a></li>
+          <li><a href="#"><b>WEB STORIES</b></a></li>
+          <li><a href="#"><b>INDIA NEWS</b></a></li>
+          <li><a href="#"><b>ENTERTAINMENT</b></a></li>
+          <!-- <li><a href="/sport"><b>CRICKET</b></a></li> -->
+          <li><a href="#"><b>EDUCATION</b></a></li>
+          <li><a href="/international"><b>INTERNATIONAL NEWS</b></a></li>
+          <li><a href="#"><b>CITIES</b></a></li>
+          <li><a href="#"><b>QUICK READS</b></a></li>
+          <li><a href="#"><b>ANALYSIS</b></a></li>
+          <li><a href="#"><b>FOLLOWING</b></a></li>
+          <li><a href="#"><b>SCIENCE</b></a></li>
+          <li><a href="#"><b>QUIZ</b></a></li>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+  
+  
+  <!-- Navigation Bar -->
+  <div class="nav">
+  <div class="m-2">
+  <nav class="nav nav-pills">
+    <nav class="navbar navbar-expand-lg navbar-primary" style="background-color: white;">
+
+              
+          <a href="#" class="nav-link dropdown-toggle navbar-brand" data-bs-toggle="dropdown">Articles</a>
+            <div class="dropdown-menu">
+            <a href="/top5" class="dropdown-item">Top 5 Articles</a>
+            <a href="/international" class="dropdown-item">international Articles</a>
+            <a href="/tech" class="dropdown-item">Technical Articles</a>
+            <a href="/sport" class="dropdown-item">Sport Articles</a>
+            <a href="/astrology" class="dropdown-item">Astrology Articles</a>
+            <a href="/lifestyle" class="dropdown-item">lifestyle Articles</a>
+          </div>
+          
+            <div id="latest-container" class="news-container">
+              <!-- Latest news articles will be dynamically loaded here -->
+          </div>
+          
+          <div id="updated-container" class="news-container">
+              <!-- Updated news articles will be dynamically loaded here -->
+          </div>
+          
+          <div id="new-container" class="news-container">
+              <!-- New news articles will be dynamically loaded here -->
+          </div>
+
+
+
+          
+        </li>
+       
+        
+        
+        <li class="nav-item">
+          <div class="nav-item dropdown">          
+          <a href="#" class="nav-link dropdown-toggle navbar-brand" data-bs-toggle="dropdown">Entertainment</a>
+            <div class="dropdown-menu">
+            <a href="/sport" class="dropdown-item">Sports</a>
+            <a href="#" class="dropdown-item">Cinema</a>
+          </div>
+          </div>
+        </li>
+        
+        
+        <li class="nav-item">
+          <div class="nav-item dropdown">          
+          <a href="#" class="nav-link dropdown-toggle navbar-brand" data-bs-toggle="dropdown">Downloads</a>
+            <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Citizen Charter</a>
+            <a href="#" class="dropdown-item">Acts</a>
+            <a href="#" class="dropdown-item">Forms</a>
+            <a href="#" class="dropdown-item">Statics</a>
+            <a href="#" class="dropdown-item">Admin Report</a>
+            <a href="#" class="dropdown-item">Official Fonts</a>
+          </div>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a href="#" class="nav-link navbar-brand" data-bs-toggle="dropdown">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <div class="nav-item dropdown">          
+          <a href="#" class="nav-link dropdown-toggle navbar-brand" data-bs-toggle="dropdown">Media & News</a>
+            <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">News</a>
+            <a href="#" class="dropdown-item">Awards</a>
+            <a href="#" class="dropdown-item">E-Books</a>
+          </li>
+          
+          </div>
+          <a href="/login"><button onclick="filterNews('latest')">Log In</button></a>
+          </div>
+          
+        </li>
+      </ul>
+    </div>
+   </nav>
+  </nav>
+</div>
+  {% block child_block%}
+    {%endblock%}
+    
+  </div>
+  <div id="content">{% block content %}{% endblock %}</div>
+  <div class="footer">
+    <div id="footer">
+      <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+             <a href="#"><h4>Contacts</h4></a>
+              <ol class="list-unstyled">
+                <li>Contact No: 0780-0752860</li>
+                <li> Email: anandnirnaya@nic.in</li>
+                <li>Anand Nirnaya <br>
+                  Malti Kunj, <br> Daudpur, Gorakhpur <br> India 273001</li>
+              </ol>
+            </div>
+            <style>
+              /* Remove default underline and blue color */
+              a {
+                text-decoration: none;
+                color: inherit;
+              }
+            
+              /* Change link color on hover */
+              a:hover {
+                color: red; /* Set your desired color on hover */
+              }
+            </style>
+            <div class="col">
+              <h4>Useful Informantion</h4>
+              <ol class="list-unstyled arrow-list">
+                <a href="#"><li>Accommodation</li></a>
+                <a href="#"><li>Downloads</li></a>
+                <a href="#"><li>Media & News</li></a>
+                <a href="#"><li>Event</li></a>
+                <a href="#"><li>FAQ's</li></a>
+                <a href="#/"><li>Tenders</li></a>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+        <div class="col">
+          <h4>Policies</h4>
+          <ul class="list-unstyled">
+            <li>Terms & Condition</li>
+            <li>Disclaimer</li>
+            <li>Privacy Policies</li>
+            <li>Help</li>
+          </ul>
+        </div>
+        <!-- <div class="m-4">
+        <div class="col">
+          <a class="navbar-brand" href="#">
+            <img src="https://goatourism.gov.in/wp-content/uploads/2019/12/min_tourism_india.jpg" width="200" height="100" alt="Logo"></a>
+            <a class="navbar-brand" href="#">
+              <img src="https://goatourism.gov.in/wp-content/uploads/2019/09/LOGO_MAHATMA-300x122.jpg" width="200" height="100" alt="Logo"></a>
+              <a class="navbar-brand" href="#">
+                <img src="https://goatourism.gov.in/wp-content/uploads/2019/01/goa_gov.png" width="200" height="100" alt="Logo"></a>
+                <a class="navbar-brand" href="#">
+                  <img src="https://goatourism.gov.in/wp-content/uploads/2018/12/Utsav-300x64-1.jpg" width="200" height="100" alt="Logo"></a>
+        </div>
+        </div> -->
+          </div>
+        </div>
+        {% block footer %}
+        <p>Copyright &copy; 2023. All Rights reserved. <br> This is the official website of E-News Paper <b> Anand Nirnaya </b>, <br> Government of India <br>
+          Total Visitors: 1303535 <br>
+          This website was last updated on August 20, 2023.
+          
+          Website Maintained by Demerg Systems India</p>
+          <p>Created By -Diptansh Kumar Srivastava- 7800752860</p>
+    
+        {% endblock %}
+    </div>
+  </div>
+</body>
+</html>

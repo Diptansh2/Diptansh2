@@ -1,0 +1,173 @@
+{% extends 'dashboard/base.html' %}
+{% block child_block %}
+<!-- Your common navigation buttons or links can go here -->
+<div class="navpage">
+  {% csrf_token %}
+  <div class="button-container-article">
+    <a href="/top5"><button onclick="filterNews('latest')">Top 5 Articles</button></a>
+    <a href="/sport"><button onclick="filterNews('updated')">Sport Articles</button></a>
+    <a href="/international"><button onclick="filterNews('new')">International</button></a>
+    <a href="/tech"><button onclick="filterNews('Tech')">Technical Articles</button></a>
+    <a href="/astrology"><button onclick="filterNews('astrology')">Astrology</button></a>
+    <!-- <a href="/left"><button onclick="filterNews('Tech')">Left Advertisement</button></a>
+    <a href="/right"><button onclick="filterNews('Tech')">Right Advertisement</button></a>
+     -->
+    <a href="/lifestyle"><button onclick="filterNews('lifestyle')">lifestyle</button></a>
+
+</div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Left Advertisement Column -->
+    <div class="col-md-2">
+      {% for data in left_data %}
+      <div class="card advertisement-card">
+        <div class="card-body">
+          <h5 class="card-title">Advertisement</h5>
+          <h5 class="card-title">{{ data.uleftpost }}</h5>
+          <img src="{{ data.img_url }}" height="100px" width="175px" alt="Image">
+      <p class="card-text">{{ data.ualeftpost }}</p>
+      <p class="card-text">Posted at: {{ data.created_at }}</p>
+      <a href="{% url 'leftpost' %}?data={{ data.uleftpost }}"></a>
+      <a href="{% url 'leftpost' %}?data={{ data.ualeftpost }}"></a>
+   
+          <!-- <img src="advertisement-left.jpg" alt="Left Advertisement"> -->
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+
+    <div class="col-md-8">
+      <div class="card" style="text-align: center;"><h1>News</h1></div>
+      <!-- <div class="row row-cols-1 row-cols-md-1 g-4"> -->
+  <!-- Latest Posts Section -->
+  <div class="latest">
+   
+    {% for data in latest_data %}
+    <div class="card">
+      <div class="card-body">
+    <h5 class="card-title">{{ data.ulatestpost }}</h5>
+    <img src="{{ data.img_url }}" height="150px" width="300px" alt="Image">
+      <p class="card-text">{{ data.ualatestpost }}</p>
+      <p class="card-text">Posted at: {{ data.created_at }}</p>
+      <a href="{% url 'latestpost' %}?data={{ data.ulatestpost }}"></a>
+      <a href="{% url 'latestpost' %}?data={{ data.ualatestpost }}"></a>
+      </div>
+    </div>
+    {% endfor %}
+  <!-- </div> -->
+
+  <!-- Technical Posts Section -->
+  <!-- <div class="latest"> -->
+   
+    {% for data in technical_data %}
+    <div class="card">
+      <div class="card-body">
+    <h5 class="card-title">{{ data.utechnicalpost }}</h5>
+    <img src="{{ data.img_url }}" height="150px" width="300px" alt="Image">
+            <p class="card-text">{{ data.uatechnicalpost }}</p>
+            <p class="card-text">Posted at: {{ data.created_at }}</p>
+            <a href="{% url 'technicalpost' %}?data={{ data.utechnicalpost }}"></a>
+            <a href="{% url 'technicalpost' %}?data={{ data.uatechnicalpost }}"></a>
+      </div>
+    </div>
+    {% endfor %}
+  <!-- </div> -->
+
+  <!-- International Posts Section -->
+  <!-- <div class="latest"> -->
+   
+    {% for data in international_data %}
+    <div class="card">
+      <div class="card-body">
+    <h5 class="card-title">{{ data.uinternationalpost }}</h5>
+    <img src="{{ data.img_url }}" height="150px" width="300px" alt="Image">
+        <p class="card-text">{{ data.uainternationalpost }}</p>
+        <p class="card-text">Posted at: {{ data.created_at }}</p>
+        <a href="{% url 'internationalpost' %}?data={{ data.uinternationalpost }}"></a>
+        <a href="{% url 'internationalpost' %}?data={{ data.uainternationalpost }}"></a>
+      </div>
+    </div>
+    {% endfor %}
+  <!-- </div> -->
+
+  <!-- Sport Posts Section -->
+  <!-- <div class="latest"> -->
+    
+    {% for data in sport_data %}
+    <div class="card">
+      <div class="card-body">
+    <h5 class="card-title">{{ data.usportpost }}</h5>
+    <img src="{{ data.img_url }}" height="150px" width="300px" alt="Image">
+          <p class="card-text">{{ data.uasportpost }}</p>
+          <p class="card-text">Posted at: {{ data.created_at }}</p>
+          <a href="{% url 'sportpost' %}?data={{ data.usportpost }}"></a>
+          <a href="{% url 'sportpost' %}?data={{ data.uasportpost }}"></a>
+     
+      </div>
+    </div>
+    {% endfor %}
+  
+
+  <!-- Astrology Posts Section -->
+  <!-- <div class="latest"> -->
+   
+    {% for data in astrology_data %}
+    <div class="card">
+      <div class="card-body">
+    <h5 class="card-title">{{ data.uastrologypost }}</h5>
+    <img src="{{ data.img_url }}" height="150px" width="300px" alt="Image">
+        <p class="card-text">{{ data.uaastrologypost }}</p>
+        <p class="card-text">Posted at: {{ data.created_at }}</p>
+        <a href="{% url 'astrologypost' %}?data={{ data.uastrologypost }}"></a>
+        <a href="{% url 'astrologypost' %}?data={{ data.uaastrologypost }}"></a>
+      </div>
+    </div>
+    {% endfor %}
+  <!-- </div> -->
+  
+
+<!-- Lifestyle Posts Section -->
+  <!-- <div class="latest"> -->
+   
+    {% for data in lifestyle_data %}
+    <div class="card">
+      <div class="card-body">
+    <h5 class="card-title">{{ data.ulifestylepost }}</h5>
+    <img src="{{ data.img_url }}" height="150px" width="300px" alt="Image">
+            <p class="card-text">{{ data.ualifestylepost }}</p>
+            <p class="card-text">Posted at: {{ data.created_at }}</p>
+            <a href="{% url 'lifestylepost' %}?data={{ data.ulifestylepost }}"></a>
+            <a href="{% url 'lifestylepost' %}?data={{ data.ualifestylepost }}"></a>
+      </div>
+    </div>
+    {% endfor %}
+  <!-- </div> -->
+</div> 
+
+  </div>
+  <div class="col-md-2">
+    {% for data in right_data %}
+    <div class="card advertisement-card">
+      <div class="card-body">
+        <h5 class="card-title">Advertisement</h5>
+        <h5 class="card-title">{{ data.urightpost }}</h5>
+        <img src="{{ data.img_url }}" height="100px" width="175px" alt="Image">
+    <p class="card-text">{{ data.uarightpost }}</p>
+    <p class="card-text">Posted at: {{ data.created_at }}</p>
+    <a href="{% url 'rightpost' %}?data={{ data.urightpost }}"></a>
+    <a href="{% url 'rightpost' %}?data={{ data.uarightpost }}"></a>
+ 
+        <!-- <img src="advertisement-left.jpg" alt="Left Advertisement"> -->
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
+

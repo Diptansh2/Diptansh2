@@ -1,0 +1,54 @@
+{%extends 'entry/base1.html'%}
+{%block child_block%}
+<div class="bg-info">
+<div class="container mt-3 bg-primary">
+  <h2>Ojd Registration Form</h2>
+ <form id="registration-form" action="#" method="post">
+    <div class="mb-3 mt-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="na">
+      </div>
+ 
+      <div class="mb-3 mt-3">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="em">
+      </div>
+      <div class="mb-3">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pw">
+      </div>
+    <div class="mb-3 mt-3">
+        <label for="email">Id</label>
+        <select class="form-select" name="course">
+            <option>Not Select</option>
+            <option>Aadhar Card</option>
+            <option>Pan Card</option>
+            <option>Driving Lisence</option>
+            <option>Voter Id</option>
+          </select>
+          <div class="mb-3">
+            <label for="pwd">Unique Number</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter Unique Number" name="course">
+          </div>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="gen">Gender</label>
+        <div class="form-check-line" >
+            <input type="radio" class="form-check-input" id="radio1" name="gender" value="male" checked>Male
+            <label class="form-check-label" for="radio1"></label>           
+       
+       
+            <input type="radio" class="form-check-input" id="radio2" name="gender" value="female" >female
+            <label class="form-check-label" for="radio1"></label>
+            
+          </div>
+            </div>
+ 
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
+</div>
+
+</body>
+{%endblock%}
